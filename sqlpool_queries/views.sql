@@ -1,4 +1,4 @@
---KPI's
+--KPI's for azure healthcare data
 --1.Beds occupied total
 CREATE VIEW vw_bed_occupancy AS
 SELECT 
@@ -71,5 +71,3 @@ JOIN dbo.dim_patient p ON f.patient_sk = p.surrogate_key
 JOIN dbo.dim_department d ON f.department_sk = d.surrogate_key
 WHERE f.length_of_stay_hours > 50
 GROUP BY d.department, p.gender;
-
---4.AVG treatment duration
